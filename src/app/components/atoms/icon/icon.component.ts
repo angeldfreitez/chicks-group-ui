@@ -9,5 +9,5 @@ import {Icon} from '../../../core/entitys/components/icon';
   styleUrl: './icon.component.css'
 })
 export class IconComponent {
-  @Input() iconName: Icon = Icon.PERSON;
+  @Input() iconName: string = Icon.PERSON;
 }

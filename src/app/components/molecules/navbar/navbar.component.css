@@ -107,6 +107,7 @@
   background-color: #2b2b2b;
   transition: 0.3s;
   padding: 20px;
+  z-index: 10;
 }
 
 .sidebar.active {
