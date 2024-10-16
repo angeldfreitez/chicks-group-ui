@@ -1,0 +1,73 @@
+<nav class="flex-container navbar font-size-12">
+
+  <div class="hamburger-menu" (click)="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="logo flex-start">
+    <app-link [url]="RoutesAvailable.ROOT">
+      <app-img [margin]="logoMargin" [filterSVG]="FilterSVG.WHITE"></app-img>
+    </app-link>
+  </div>
+
+  <div class="flex-start">
+    <ul class="nav-links">
+      <li class="dropdown content-align-center" *ngFor="let item of items">
+          <div
+            (mouseover)="onMouseOver(item)"
+            (mouseout)="onMouseOut(item)"
+            class="d-flex flex-center hv-color"
+          >
+            {{item.text}}
+            <app-icon
+              *ngIf="item.subItems !== undefined && item.subItems.length > 0"
+              [iconName]="item.hovered ? Icon.KEYBOARD_ARROW_DOWN : Icon.KEYBOARD_ARROW_DOWN"
+            ></app-icon>
+          </div>
+        <div *ngIf="item.subItems !== undefined && item.subItems.length > 0" (mouseout)="onMouseOut(item)">
+          <ul class="dropdown-content">
+            <li *ngFor="let subItem of item.subItems">
+              <app-navbar-menu-item
+                [url]="subItem.url"
+                [icon]="subItem.icon"
+                [text]="subItem.text"
+              ></app-navbar-menu-item>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="flex-m-end">
+    <app-button [text]="button.text"
+                [requiredIcon]="button.requiredIcon"
+                [icon]="button.icon"
+                [style]="button.style"
+    ></app-button>
+  </div>
+
+  <div id="sidebar" class="sidebar" [ngClass]="{'active': sidebarActive}">
+    <div class="sidebar-menu">
+      <div (click)="toggleSidebar()">
+        <app-icon [iconName]="Icon.CLOSE"></app-icon>
+      </div>
+      <div *ngFor="let item of items">
+        <h4>
+          {{item.text}}
+        </h4>
+        <ul>
+          <li class="dropdown content-align-center" *ngFor="let subItem of item.subItems" >
+            <app-navbar-menu-item
+              [url]="subItem.url"
+              [icon]="subItem.icon"
+              [text]="subItem.text"
+            ></app-navbar-menu-item>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

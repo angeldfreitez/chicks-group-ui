@@ -1,0 +1,152 @@
+.logo{
+  display: flex;
+  padding-right: 3%;
+  border-right: white 1px solid;
+}
+.content-align-center{
+  align-content: center;
+}
+.navbar {
+  align-items: center;
+  background-color: #303141;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  border-bottom: #4c6085 1px solid;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+  margin: 0 15px;
+}
+.nav-links li:hover .hv-color {
+  color: #12da36;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.nav-links .dropdown-content {
+  display: none;
+  list-style: none;
+  position: absolute;
+  background-color: #303141;
+  min-width: 200px;
+
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: #4c6085 1px solid;
+}
+
+.nav-links li:hover .dropdown-content {
+  display: block;
+}
+.nav-links li .dropdown-content li {
+  padding: 10px 0;
+}
+.nav-links li .dropdown-content li:hover {
+  color: #12da36;
+}
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 1px;
+  background-color: white;
+  margin: 2px 0;
+  transition: 0.4s;
+}
+
+
+
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .logo {
+    display: flex;
+    border-right: none;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+}
+
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -9000px;
+  width: 100%;
+  height: 100%;
+  background-color: #2b2b2b;
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar-menu {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.sidebar-menu ul li {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar-menu ul li:hover {
+  background-color: #444;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+
+
+

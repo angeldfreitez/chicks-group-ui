@@ -1,0 +1,13 @@
+<button class="d-flex btn"
+  [ngStyle]="{
+    'background-color': style.background,
+    'color': style.color,
+    'font-size': style.fontSize,
+    'font-weight': style.fontWeight,
+    'padding': style.padding,
+    'margin': style.margin
+   }"
+>
+  {{text}}
+  <app-icon *ngIf="requiredIcon" class="pl-icon" [iconName]="Icon.PERSON"/>
+</button>
