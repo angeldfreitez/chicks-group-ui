@@ -1,7 +1,7 @@
 .footer {
-    background-color: #2b2b3c;
+    background-color: var(--bg-footer-color);
     padding: 40px 0 20px 0;
-    position: absolute;
+    position: relative;
     bottom: 0;
     z-index: 0;
 }
@@ -32,38 +32,48 @@
     }
 }
 
-
-.footer .footer-center {
+.footer .footer-center .menu-collapse-column {
     flex: 2;
     display: flex;
-    gap: 40px;
+    gap: 95px;
 }
 
-.footer .footer-center .column h3 {
-    font-size: 18px;
+.footer .footer-center .menu-collapse-column .column h3 {
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
-.footer .footer-center .column ul {
+.footer .footer-center .menu-collapse-column .column ul {
     list-style: none;
     padding: 0;
 }
 
-.footer .footer-center .column ul li {
+.footer .footer-center .menu-collapse-column .column ul li {
     margin-bottom: 10px;
 }
 
-.footer .footer-center .column ul li a {
+.footer .footer-center .menu-collapse-column .column ul li a {
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
 }
 
+.menu-collapse {
+    display: none;
+}
+
 
 .footer .footer-right {
     flex: 1;
-}
 
+    .ft-rgt-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+    }
+
+}
 
 .footer-bottom {
     background-color: #1f1f2e;
@@ -79,6 +89,19 @@
     color: #c9c9cd;
     text-align: center;
     margin-top: 10px;
+}
+
+.trust-pilot {
+    text-align: end;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+@media (max-width: 1024px) {
+    .footer .footer-center .menu-collapse-column {
+        gap: 40px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -101,9 +124,34 @@
             font-size: 16px;
         }
     }
+    .menu-collapse {
+        padding-top: 20px;
+        display: block !important;
+    }
+    .menu-collapse-column {
+        display: none !important;
+    }
+
+    .footer .footer-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+
+        .ft-rgt-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 
     .footer-copy {
         margin-top: 30px;
+    }
+
+    .trust-pilot {
+        padding-left: 10px;
     }
 }
 

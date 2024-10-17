@@ -1,5 +1,5 @@
 :root {
-
+  --bg-footer-color: #2b2b3c
 }
 
 html, body {
@@ -9,7 +9,6 @@ html, body {
   width: 100%;
   box-sizing: border-box;
   color: #ffffff;
-  /*overflow-x: hidden*/
 }
 
 * {
@@ -30,6 +29,14 @@ body {
 }
 .h-100 {
   height: 100%;
+}
+
+
+.pl-10 {
+  padding-left: 10px;
+}
+.pt-20 {
+  padding-top: 20px;
 }
 
 .container-lg {
@@ -66,7 +73,6 @@ body {
 .d-flex {
   display: flex;
 }
-
 
 .flex-container {
   display: flex;

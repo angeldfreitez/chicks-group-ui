@@ -10,33 +10,24 @@
                 <span class="footer-email " >support&#64;chcksgold.com</span>
             </div>
             <div class="footer-center">
-                <div class="column">
-                    <h3>Chicks Gold</h3>
-                    <ul>
-                        <li><a href="#">Games</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                    </ul>
+                <div class="menu-collapse-column">
+                    <div class="column" *ngFor="let menu of footerMenu">
+                        <h3>{{ menu.title }}</h3>
+                        <ul>
+                            <li *ngFor="let menu of menu.items"><a [href]="menu.link">
+                                {{menu.title}}
+                            </a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="column">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="column">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Copyright Policy</a></li>
-                    </ul>
-                </div>
+                <app-collapsible-menu [menuSections]="footerMenu" class="menu-collapse"></app-collapsible-menu>
             </div>
+
             <div class="footer-right">
-                hola
+                <div class="ft-rgt-content">
+                    <span class="trust-pilot">Trustpilot Reviews</span>
+                    <app-trustpillot/>
+                </div>
             </div>
         </div>
 
@@ -45,4 +36,5 @@
         </div>
 
     </div>
+
 </footer>
