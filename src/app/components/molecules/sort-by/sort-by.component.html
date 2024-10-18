@@ -1,13 +1,13 @@
 <div class="sort-by-container" (click)="toggleDropdown()">
-  <div class="d-flex flex-row">
+  <div class="d-flex flex-row flex-wrap">
     <span class="material-icons sort-icon">tune</span>
     <div class="flex-column column-width">
       <div class="text-label">
         <span>Sort By</span>
       </div>
       <div class="dropdown">
-        <button  class="dropdown-button">
-          {{ selectedOption }}
+        <button  class="dropdown-button ">
+          <span class="truncated-text">{{ selectedOption }}</span>
         </button>
         <ul *ngIf="isDropdownOpen" class="dropdown-menu" (click)="$event.stopPropagation()">
           <li *ngFor="let option of sortOptions" (click)="selectOption(option, $event)">

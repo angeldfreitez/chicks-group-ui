@@ -11,6 +11,7 @@ import {SortByComponent} from '../../components/molecules/sort-by/sort-by.compon
 import {SearchBarComponent} from '../../components/organisms/search-bar/search-bar.component';
 import {CardStyle} from '../../core/entitys/components/card';
 import {SelectGameComponent} from '../../components/molecules/select-game/select-game.component';
+import {SortItem} from '../../core/entitys/components/sort-by';
 
 @Component({
   selector: 'app-home',
@@ -47,8 +48,9 @@ export class HomeComponent {
   constructor(
     private serviceProduct: ProductsService
   ) {
-    this.products = this.serviceProduct.getProducts(2510)
-    this.updateDisplayedProducts();
+    const randomNumber = Math.floor(Math.random() * (3000 - 250 + 1)) + 250;
+    this.products = this.serviceProduct.getProducts(randomNumber)
+    this.onSortBy(SortItem.PRICE_HIGH_TO_LOW)
     this.totalPages = Math.ceil(this.products.length / this.productsPerPage);
   }
 
@@ -64,6 +66,23 @@ export class HomeComponent {
   onSearch(term: string) {
     this.searchTerm = term;
     this.applyFilters(); // Aplicamos los filtros cuando el término de búsqueda cambia
+  }
+
+  onSortBy(key: string) {
+    this.searchTerm = key
+
+    switch (key) {
+      case SortItem.PRICE_LOW_TO_HIGH:
+        this.products.sort((a, b) => a.price - b.price);
+        break;
+      case SortItem.PRICE_HIGH_TO_LOW:
+        this.products.sort((a, b) => b.price - a.price);
+        break;
+      default:
+        // No sort applied if the key doesn't match any case
+        break;
+    }
+    this.updateDisplayedProducts()
   }
 
   applyFilters() {

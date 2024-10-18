@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {NgForOf, NgIf} from '@angular/common';
+import {SortItem} from '../../../core/entitys/components/sort-by';
 
 @Component({
   selector: 'app-sort-by',
@@ -13,8 +14,13 @@ import {NgForOf, NgIf} from '@angular/common';
 })
 export class SortByComponent {
   isDropdownOpen = false;
-  selectedOption = 'Price';
-  sortOptions = ['Price', 'Name'];
+  selectedOption:string = SortItem.PRICE_HIGH_TO_LOW;
+  sortOptions = [
+    SortItem.PRICE_HIGH_TO_LOW,
+    SortItem.PRICE_LOW_TO_HIGH,
+  ];
+
+  @Output() sortBy = new EventEmitter<string>();
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
@@ -23,6 +29,7 @@ export class SortByComponent {
   selectOption(option: string, event: Event) {
     event.stopPropagation();
     this.selectedOption = option;
+    this.sortBy.emit(this.selectedOption);
     this.isDropdownOpen = false;
   }
 }

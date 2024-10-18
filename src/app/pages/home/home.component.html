@@ -6,7 +6,7 @@
   <app-card [cardStyle]="cardStyle">
     <div class="header">
       <span class="showing-text">Showing {{ displayedProducts.length }} from {{ products.length }}</span>
-      <app-sort-by></app-sort-by>
+      <app-sort-by (sortBy)="onSortBy($event)"></app-sort-by>
     </div>
 
     <app-products-market-place

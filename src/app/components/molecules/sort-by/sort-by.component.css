@@ -60,3 +60,15 @@
 .dropdown-menu li:hover {
   background-color: #35464e;
 }
+
+@media (max-width: 425px) {
+  .dropdown-menu {
+    min-width: 100px;
+  }
+  .truncated-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 50px;
+  }
+}
