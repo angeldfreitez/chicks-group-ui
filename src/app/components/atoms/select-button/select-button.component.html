@@ -1,0 +1,5 @@
+<div class="select-number">
+  <select [(ngModel)]="selectedValue">
+    <option *ngFor="let number of numbers" [value]="number">{{ number }}</option>
+  </select>
+</div>

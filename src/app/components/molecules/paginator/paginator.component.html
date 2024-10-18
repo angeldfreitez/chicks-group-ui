@@ -1,0 +1,19 @@
+<div class="pagination-container">
+  <button (click)="previousPage()" [disabled]="currentPage === 1">
+    <app-icon
+      [size]="'20px'"
+      [iconName]="Icon.ARROW_LEFT"
+    ></app-icon>
+  </button>
+
+  <span *ngFor="let page of pages" (click)="onPageChange(page)" [class.active]="currentPage === page">
+    {{ page }}
+  </span>
+
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+    <app-icon
+      [size]="'20px'"
+      [iconName]="Icon.ARROW_RIGHT"
+    ></app-icon>
+  </button>
+</div>

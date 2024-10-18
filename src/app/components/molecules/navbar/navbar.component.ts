@@ -32,14 +32,15 @@ export class NavbarComponent {
     style: {
       background: '#38e29d',
       color: 'black',
-      fontSize: '16px',
+      fontSize: '12px',
       fontWeight: '500',
+      iconSize: '24px',
       padding: '10px 20px',
       margin: '0'
     },
     text: 'SING IN',
     requiredIcon: true,
-    icon: 'material-person'
+    icon: 'person'
   }
   items: NavbarItems[] = [
     {

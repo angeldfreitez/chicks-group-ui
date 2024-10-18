@@ -1,0 +1,19 @@
+.card {
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  border: var(--border-color) solid 1px ;
+
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 15px; /* Ajustar padding en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 10px; /* Ajustar padding aún más en pantallas muy pequeñas */
+  }
+}

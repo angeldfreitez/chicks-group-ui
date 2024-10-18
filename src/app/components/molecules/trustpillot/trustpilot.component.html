@@ -1,0 +1,6 @@
+<div class="star-rating">
+  <span class="material-icons" *ngFor="let star of fullStars">star</span>
+  <span class="material-icons" *ngIf="hasHalfStar">star_half</span>
+  <span class="material-icons" *ngFor="let star of emptyStars">star_outline</span>
+  <span class="rating-text">{{ rating }}/5</span>
+</div>

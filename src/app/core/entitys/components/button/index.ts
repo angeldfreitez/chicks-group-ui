@@ -3,6 +3,7 @@ export interface ButtonStyle {
   color: string;
   fontSize: string;
   fontWeight: string;
+  iconSize: string;
   padding: string;
   margin: string;
 }

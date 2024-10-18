@@ -1,0 +1,47 @@
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  margin: 30px 0;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid #5762d5;
+  color: #5762d5;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  color: #6b6b6b;
+  border: 1px solid #6b6b6b;
+  cursor: not-allowed;
+}
+
+span {
+  cursor: pointer;
+  padding: 10px;
+}
+
+span.active {
+  background-color: #4c63d9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .pagination-container {
+    gap: 10px;
+  }
+  button{
+    padding: 5px;
+  }
+  span {
+    padding: 5px;
+  }
+}

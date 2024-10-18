@@ -1,0 +1,10 @@
+<div class="d-flex flex-row social-align">
+  <app-link [url]="'#'" *ngFor="let item of socialLinks" class="social-link">
+    <app-img
+      [alt]="item.alt"
+      [src]="item.img"
+      [height]="height"
+      [width]="width"
+    ></app-img>
+  </app-link>
+</div>

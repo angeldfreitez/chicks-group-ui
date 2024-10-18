@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
-  border-bottom: #4c6085 1px solid;
+  border-bottom: var(--border-color) 1px solid;
 }
 
 .nav-links {

@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.showing-text {
+  color: var(--color-not-important);
+  font-size: 12px;
+}
+.section-bar {
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 12%;
+}
+.title-page {
+  font-size: 38px;
+  font-weight: 600;
+}
+.section-home{
+  margin-top: 15%;
+}
+
+
+@media (max-width: 768px) {
+  .section-home{
+    margin-top: 10%;
+  }
+  .title-page {
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .title-page {
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 10px;
+  }
+}

@@ -1,0 +1,50 @@
+.menu {
+  background-color: var(--bg-footer-color);
+  color: #fff;
+  padding: 10px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid #4e4e5a;
+}
+
+.section-header span {
+  transition: transform 0.3s ease;
+}
+
+.section-header span.open {
+  transform: rotate(180deg);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+li {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #b0b0b0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: white;
+  color: white;
+}

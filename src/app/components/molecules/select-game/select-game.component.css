@@ -1,0 +1,26 @@
+.game-selector {
+  display: flex;
+  align-items: center;
+  background-color: #303141;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+}
+
+select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 12px;
+}
+
+select:focus {
+  outline: none;
+}
+
+.material-icons {
+  font-size: 24px;
+  color: white;
+}

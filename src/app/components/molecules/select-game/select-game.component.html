@@ -1,0 +1,10 @@
+<div class="game-selector">
+  <span class="material-icons">
+    person
+  </span>
+  <select>
+    <option disabled selected>Select a game</option>
+    <option *ngFor="let game of games" [value]="game">{{ game }}</option>
+  </select>
+</div>
+

@@ -1,0 +1,15 @@
+.select-number select {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.select-number select option {
+  background-color: white;
+  color: black;
+}

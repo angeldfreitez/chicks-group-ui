@@ -1,0 +1,16 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.material-icons {
+  font-size: 20px;
+  color: white;
+}
+
+.rating-text {
+  font-size: 14px;
+  margin-left: 5px;
+  color: white;
+}

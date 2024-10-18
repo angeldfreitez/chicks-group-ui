@@ -1,0 +1,68 @@
+<app-card [cardStyle]="cardStyle">
+  <div class="card-header">
+    <div class="stock-quantity">
+      <div class="d-flex flex-row flex-wrap flex-space-between flex-center pb-10">
+        <app-product-on-sale
+          [inStock]="product.inStock"
+          [onSale]="product.onSale"
+        ></app-product-on-sale>
+        <div class="d-flex flex-column">
+          <app-number-select></app-number-select>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row pb5 pt-10">
+      <app-img
+        [src]="product.img"
+        [width]="'50px'"
+        [height]="'50px'"
+      ></app-img>
+    </div>
+
+    <div class="d-flex flex-row flex-wrap flex-space-between flex-center">
+
+      <div class="d-flex flex-column">
+        <div class="pb-10">{{product.name}}</div>
+        <div class="d-flex flex-row">
+          <span class="discounted-price">
+            {{getProductDiscountedPrice(product.price,product.discount) | price}}
+          </span>
+          <span *ngIf="product.discount > 0"
+                [ngClass]="{
+                  'original-price': product.discount > 0,
+                  'pl-5': product.discount > 0,
+                }"
+          >
+            {{product.price | price}}
+          </span>
+        </div>
+      </div>
+
+      <div class="icon-game">
+        <app-img
+          [src]="product.logo_game"
+          width="15px"
+          height="15px"
+        ></app-img>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row flex-wrap product-description">
+      <span>{{product.description}}</span>
+    </div>
+    <div class="d-flex flex-space-between">
+      <app-button
+        [requiredIcon]="false"
+        [text]="'DETAILS'"
+        [style]="buttonDetailStyle"
+      ></app-button>
+      <app-button
+        [requiredIcon]="true"
+        [icon]="Icon.SHOPPING_CART"
+        [text]="'ADD'"
+        [style]="buttonAddStyle"
+      ></app-button>
+    </div>
+  </div>
+</app-card>

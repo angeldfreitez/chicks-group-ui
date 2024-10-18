@@ -1,0 +1,11 @@
+<div class="card" [ngStyle]="{
+  'background-color': cardStyle.backgroundColor,
+  'padding': cardStyle.padding,
+  'margin': cardStyle.margin,
+  'border-color': cardStyle.borderColor,
+  'width': cardStyle.width || 'auto',
+  'height': cardStyle.height  || 'auto',
+  }"
+>
+  <ng-content></ng-content>
+</div>

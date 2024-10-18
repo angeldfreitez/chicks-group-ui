@@ -1,17 +1,24 @@
-<p>home works!</p>
-<br>
-<p>home works!</p>
-<br><p>home works!</p>
-<br><p>home works!</p>
-<br><p>home works!</p>
-<br><p>home works!</p>
-<br>
-<p>home works!</p>
-<br><p>home works!</p>
-<br><p>home works!</p>
-<br><p>home works!</p>
-<br>
-<br><p>home works!</p>
-<br><br><p>home works!</p>
-<br><br><p>home works!</p>
-<br>
+
+<div class="section-home">
+  <div class="title-page">Condimentum consectetur </div>
+  <app-search-bar ></app-search-bar>
+
+  <app-card [cardStyle]="cardStyle">
+    <div class="header">
+      <span class="showing-text">Showing {{ displayedProducts.length }} from {{ products.length }}</span>
+      <app-sort-by></app-sort-by>
+    </div>
+
+    <app-products-market-place
+      [products]="displayedProducts"
+    />
+
+    <app-paginator
+      [totalPages]="totalPages"
+      [currentPage]="currentPage"
+      (pageChange)="onPageChanged($event)">
+    </app-paginator>
+
+  </app-card>
+</div>
+

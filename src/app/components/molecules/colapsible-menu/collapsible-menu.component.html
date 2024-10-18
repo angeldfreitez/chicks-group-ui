@@ -1,0 +1,15 @@
+<div class="menu">
+  <div *ngFor="let section of menuSections" class="section">
+    <button (click)="toggleSection(section.title)" class="section-header">
+      {{ section.title }}
+      <span [ngClass]="{'open': sectionsState[section.title]}">▼</span>
+    </button>
+    <ul *ngIf="sectionsState[section.title]">
+      <li *ngFor="let item of section.items">
+        <a [href]="item.link">
+          {{ item.title }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -25,6 +25,7 @@ export class ButtonComponent {
     color: '#fff',
     fontSize: '16px',
     fontWeight: '500',
+    iconSize: '24px',
     padding: '10px 20px',
     margin: '0'
   };

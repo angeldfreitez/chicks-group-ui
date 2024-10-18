@@ -1,0 +1,53 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.custom-select-number {
+  display: inline-flex;
+  align-items: center;
+  background-color: #373e54;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  width: 70px;
+  height: 40px;
+  position: relative;
+}
+
+.custom-select-number input {
+  width: 30px;
+  text-align: center;
+  background-color: #373e54;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 5px;
+}
+
+.arrows button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.arrows button:hover {
+  color: green;
+}
+
+
+
