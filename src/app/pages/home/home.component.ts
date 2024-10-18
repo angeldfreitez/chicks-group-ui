@@ -42,6 +42,7 @@ export class HomeComponent {
     width: '100%',
     height: '100%'
   }
+  searchTerm: string = '';
 
   constructor(
     private serviceProduct: ProductsService
@@ -59,5 +60,25 @@ export class HomeComponent {
   onPageChanged(newPage: number) {
     this.currentPage = newPage;
     this.updateDisplayedProducts();
+  }
+  onSearch(term: string) {
+    this.searchTerm = term;
+    this.applyFilters(); // Aplicamos los filtros cuando el término de búsqueda cambia
+  }
+
+  applyFilters() {
+    const filteredProducts = this.products.filter(product => {
+      const searchInLowerCase = this.searchTerm.toLowerCase();
+      return (
+        product.name.toLowerCase().includes(searchInLowerCase) ||
+        product.price.toString().includes(searchInLowerCase)
+      );
+    });
+
+    this.displayedProducts = filteredProducts.slice(
+      (this.currentPage - 1) * this.productsPerPage,
+      this.currentPage * this.productsPerPage
+    );
+    this.totalPages = Math.ceil(filteredProducts.length / this.productsPerPage);
   }
 }

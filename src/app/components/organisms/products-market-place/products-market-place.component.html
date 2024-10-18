@@ -1,7 +1,15 @@
-<div class="item-list" >
+<div class="item-list" *ngIf="products.length > 0; else empty"  >
   <app-product-card
     *ngFor="let item of products"
     [product]="item"
   >
   </app-product-card>
+
+
 </div>
+
+<ng-template #empty>
+  <div class="container-lg">
+    <h1 class="not-found">Not found product</h1>
+  </div>
+</ng-template>
